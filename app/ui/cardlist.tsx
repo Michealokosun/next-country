@@ -13,7 +13,10 @@ export const CardList = ({
   const firstindexofcard: number = lastindexofcard - postperpage;
   const paginatedata = data.splice(firstindexofcard, lastindexofcard);
   const filter = paginatedata.filter((item) => {
-    return item.name.toLowerCase().includes(query);
+    return (
+      item.name.toLowerCase().includes(query) ||
+      item.region.toLocaleLowerCase() === query
+    );
   });
   return (
     <div className="flex relative justify-between items-center mx-auto flex-wrap gap-3 mt-16">

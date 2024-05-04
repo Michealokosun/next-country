@@ -45,15 +45,16 @@ export const Search = ({ query }: { query: string }) => {
           className="py-3 dark:shadow-lg dark:bg-[#18212e] focus:outline-gray-200  text-slate-400 capitalize  shadow-md text-sm px-2"
           name="select"
           id=""
+          onChange={handlesearch}
         >
-          <option value="1">select your country</option>
-          <option value="1">africa</option>
-          <option value="1">africa</option>
-          <option value="1">africa</option>
+          <option value="">select your country</option>
+          <option value="africa">Africa</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
         </select>
       </div>
-
-     
     </div>
   );
 };
