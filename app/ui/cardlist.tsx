@@ -27,6 +27,8 @@ export const CardList = ({
           </Link>
         </div>
       ))}
+
+      <p>{filter.length === 0 ? "No data found check next page" : ""}</p>
     </div>
   );
 };
