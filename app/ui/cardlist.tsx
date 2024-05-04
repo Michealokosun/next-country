@@ -1,6 +1,8 @@
 import { Cards } from "./card";
 import data from "../lib/data.json";
 import Link from "next/link";
+export const dynamic = "force-dynamic";
+
 export const CardList = ({
   query,
   currentpage,
