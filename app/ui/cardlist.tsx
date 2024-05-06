@@ -23,7 +23,7 @@ export const CardList = ({ query }: { query: string }) => {
         </div>
       ))}
 
-      <p className="text-3xl md:text-4xl">
+      <p className="text-xl md:text-4xl">
         {filter.length === 0 ? `No data found for "${query}"` : ""}
       </p>
     </div>
