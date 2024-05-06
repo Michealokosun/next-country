@@ -1,21 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
-import data from "../lib/data.json";
-export const Search = ({ query }: { query: string }) => {
+export const Search = () => {
   const { replace } = useRouter();
   const pathname = usePathname();
   const searchparams = useSearchParams();
-  const [searchstate, setsearchstate] = useState(false);
-  const handleclick = (e: any) => {
-    if (e.target.value) {
-      setsearchstate(true);
-    } else {
-      setsearchstate(false);
-    }
-  };
 
   const handlesearch = useDebouncedCallback((e: any) => {
     const params = new URLSearchParams(searchparams);
@@ -35,7 +26,6 @@ export const Search = ({ query }: { query: string }) => {
           placeholder="Search your country..."
           name="search"
           onChange={handlesearch}
-          onClick={handleclick}
           defaultValue={searchparams.get("search")?.toString()}
         />
       </div>

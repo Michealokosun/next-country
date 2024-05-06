@@ -3,18 +3,8 @@ import data from "../lib/data.json";
 import Link from "next/link";
 export const dynamic = "force-dynamic";
 
-export const CardList = ({
-  query,
-  currentpage,
-}: {
-  query: string;
-  currentpage: number;
-}) => {
-  const postperpage: number = 20;
-  const lastindexofcard: number = postperpage * currentpage;
-  const firstindexofcard: number = lastindexofcard - postperpage;
-  const paginatedata = data.splice(firstindexofcard, lastindexofcard);
-  const filter = paginatedata.filter((item) => {
+export const CardList = ({ query }: { query: string }) => {
+  const filter = data.filter((item) => {
     return (
       item.name.toLowerCase().includes(query) ||
       item.region.toLocaleLowerCase() === query
