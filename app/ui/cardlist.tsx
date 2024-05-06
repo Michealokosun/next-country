@@ -6,8 +6,8 @@ export const dynamic = "force-dynamic";
 export const CardList = ({ query }: { query: string }) => {
   const filter = data.filter((item) => {
     return (
-      item.name.toLowerCase().includes(query) ||
-      item.region.toLocaleLowerCase() === query
+      item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+      item.region.toLocaleLowerCase() === query.toLocaleLowerCase()
     );
   });
   return (
