@@ -23,7 +23,9 @@ export const CardList = ({ query }: { query: string }) => {
         </div>
       ))}
 
-      <p>{filter.length === 0 ? "No data found check next page" : ""}</p>
+      <p className="text-3xl md:text-4xl">
+        {filter.length === 0 ? `No data found for "${query}"` : ""}
+      </p>
     </div>
   );
 };
